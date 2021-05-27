@@ -1,10 +1,3 @@
-Dati studente
-Cognome: Hu
-Nome: Yanhui Matteo
-Matricola: 11519
-Classe: 5^BIN
-Anno scolastico: 2020/2021
-
 Traccia d'esame
 
 La società TradeForYou ha sede in un palazzo di Milano di 4 piani, su ognuno dei quali si trova una divisione (Amministrazione, Qualità, Dirigenza, Ricerca), e vuole innovare la sua infrastruttura tecnologica al fine di realizzare servizi interni.
