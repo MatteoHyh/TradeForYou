@@ -1,8 +1,8 @@
 Dati studente
-        Cognome: Hu
-           Nome: Yanhui Matteo
-      Matricola: 11519
-         Classe: 5^BIN
+Cognome: Hu
+Nome: Yanhui Matteo
+Matricola: 11519
+Classe: 5^BIN
 Anno scolastico: 2020/2021
 
 Traccia d'esame
