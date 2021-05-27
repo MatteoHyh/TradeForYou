@@ -7,20 +7,15 @@ Anno scolastico: 2020/2021
 
 Traccia d'esame
 
-La società TradeForYou ha sede in un palazzo di Milano di 4 piani, su ognuno dei quali si trova una divisione
-(Amministrazione, Qualità, Dirigenza, Ricerca), e vuole innovare la sua infrastruttura tecnologica al fine di
-realizzare servizi interni.
-In ogni divisione lavorano più persone e la società si occupa di investimenti per conto dei propri clienti.
-L’esigenza primaria è quella di far in modo di centralizzare tutti i dati dei clienti e delle operazioni
-finanziarie che vengono svolte per loro conto.
-Si dovrà quindi creare una base di dati che permetta di gestire l’anagrafica degli operatori che eseguono gli
-investimenti, l’anagrafica dei clienti, le operazioni di investimento eseguite per i clienti e le campagne
-pubblicitarie svolte su clienti mirati.
-Di ogni operazione di investimento, oltre all’operatore che la esegue e il cliente per il quale viene eseguita,
-si vuol memorizzare data, ora, importo e una descrizione della stessa. Mentre per le campagne pubblicitarie
-si vuol memorizzarne la denominazione, la data di scadenza, una descrizione e il budget previsto.
-Il candidato analizzi la realtà di riferimento e, fatte le opportune ipotesi aggiuntive, individui una soluzione
-che a suo motivato giudizio sia la più idonea per sviluppare i seguenti punti:
+La società TradeForYou ha sede in un palazzo di Milano di 4 piani, su ognuno dei quali si trova una divisione (Amministrazione, Qualità, Dirigenza, Ricerca), e vuole innovare la sua infrastruttura tecnologica al fine di realizzare servizi interni.
+
+In ogni divisione lavorano più persone e la società si occupa di investimenti per conto dei propri clienti. L’esigenza primaria è quella di far in modo di centralizzare tutti i dati dei clienti e delle operazioni finanziarie che vengono svolte per loro conto.
+
+Si dovrà quindi creare una base di dati che permetta di gestire l’anagrafica degli operatori che eseguono gli investimenti, l’anagrafica dei clienti, le operazioni di investimento eseguite per i clienti e le campagne pubblicitarie svolte su clienti mirati.
+
+Di ogni operazione di investimento, oltre all’operatore che la esegue e il cliente per il quale viene eseguita, si vuol memorizzare data, ora, importo e una descrizione della stessa. Mentre per le campagne pubblicitarie si vuol memorizzarne la denominazione, la data di scadenza, una descrizione e il budget previsto. 
+
+Il candidato analizzi la realtà di riferimento e, fatte le opportune ipotesi aggiuntive, individui una soluzione che a suo motivato giudizio sia la più idonea per sviluppare i seguenti punti:
 1. Il progetto, anche mediante rappresentazioni grafiche, dell’infrastruttura tecnologica ed
 informatica necessaria a gestire il servizio nel suo complesso, garantendo un adeguato standard di
 sicurezza a protezione dei dati acquisiti, in base alle ipotesi fatte sulla realtà in oggetto ed in linea
