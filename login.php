@@ -51,7 +51,6 @@ if (isset($_SESSION["id"]) && isset($_SESSION["ruolo"])) {
 <body>
 
 
-
 <!-- Navbar: barra di navigazione -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
@@ -80,15 +79,12 @@ if (isset($_SESSION["id"]) && isset($_SESSION["ruolo"])) {
 </nav>
 
 
-
 <main>
     <div class="container">
 
 
-
         <!-- div per generazione degli errori -->
         <div></div>
-
 
 
         <div class="row">
@@ -152,10 +148,8 @@ if (isset($_SESSION["id"]) && isset($_SESSION["ruolo"])) {
         </div>
 
 
-
     </div>
 </main>
-
 
 
 <footer class="bg-dark text-light text-lg-start">
@@ -179,7 +173,6 @@ if (isset($_SESSION["id"]) && isset($_SESSION["ruolo"])) {
         </div>
     </div>
 </footer>
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"

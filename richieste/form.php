@@ -65,11 +65,11 @@ session_start();
                     <a class="nav-link" href="../tabelle.php">Tabelle</a>
                 </li>
 
-                <?php if (!isset($_SESSION["id"]) || !isset($_SESSION["ruolo"])) {?>
+                <?php if (!isset($_SESSION["id"]) || !isset($_SESSION["ruolo"])) { ?>
                     <li class='nav-item'>
                         <a class='nav-link' href='../login.php'>Login</a>
                     </li>
-                <?php } else {?>
+                <?php } else { ?>
                     <li class='nav-item'>
                         <a class='nav-link' href='../logout.php'>Logout</a>
                     </li>

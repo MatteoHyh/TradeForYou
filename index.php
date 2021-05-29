@@ -46,7 +46,6 @@ session_start();
 <body>
 
 
-
 <!-- Navbar: barra di navigazione -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
@@ -66,14 +65,14 @@ session_start();
                     <a class="nav-link" href="tabelle.php">Tabelle</a>
                 </li>
 
-                <?php if (!isset($_SESSION["id"]) || !isset($_SESSION["ruolo"])) {?>
-                <li class='nav-item'>
-                    <a class='nav-link' href='login.php'>Login</a>
-                </li>
-                <?php } else {?>
-                <li class='nav-item'>
-                    <a class='nav-link' href='logout.php'>Logout</a>
-                </li>
+                <?php if (!isset($_SESSION["id"]) || !isset($_SESSION["ruolo"])) { ?>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='login.php'>Login</a>
+                    </li>
+                <?php } else { ?>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='logout.php'>Logout</a>
+                    </li>
                 <?php } ?>
             </ul>
         </div>
@@ -81,15 +80,12 @@ session_start();
 </nav>
 
 
-
 <main>
     <div class="container">
 
 
-
         <!-- div per generazione degli errori -->
         <div></div>
-
 
 
         <div class="row"><h1 style="margin-top: 20px">Homepage</h1></div>
@@ -119,7 +115,6 @@ session_start();
 </main>
 
 
-
 <footer class="bg-dark text-light text-lg-start">
     <div class="container p-4">
         <div class="row">
@@ -141,7 +136,6 @@ session_start();
         </div>
     </div>
 </footer>
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"

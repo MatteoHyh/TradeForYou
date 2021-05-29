@@ -65,11 +65,11 @@ session_start();
                     <a class="nav-link" href="../tabelle.php">Tabelle</a>
                 </li>
 
-                <?php if (!isset($_SESSION["id"]) || !isset($_SESSION["ruolo"])) {?>
+                <?php if (!isset($_SESSION["id"]) || !isset($_SESSION["ruolo"])) { ?>
                     <li class='nav-item'>
                         <a class='nav-link' href='../login.php'>Login</a>
                     </li>
-                <?php } else {?>
+                <?php } else { ?>
                     <li class='nav-item'>
                         <a class='nav-link' href='../logout.php'>Logout</a>
                     </li>
@@ -121,15 +121,19 @@ session_start();
             <div class="col-8">
                 <form action="" method="post">
                     <div class="row g-3 align-items-center">
+
                         <div class="col-auto">
                             <label for="idCliente" class="col-form-label">ID Cliente</label>
                         </div>
+
                         <div class="col-auto">
-                            <input type="text" id="idCliente" class="form-control" name="idCliente">
+                            <input type="text" id="idCliente" class="form-control" name="idCliente" required>
                         </div>
+
                         <div class="col-auto">
                             <input class="btn btn-primary" type="submit" name="submit" value="Invia">
                         </div>
+
                     </div>
                 </form>
             </div>
