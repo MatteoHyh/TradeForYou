@@ -11,6 +11,11 @@
 
 <?php
 session_start();
+
+$db_host = "ciao lol";
+$db_username = "ciao lol";
+$db_password = "ciao lol";
+$db_name = "ciao lol";
 ?>
 
 <!DOCTYPE html>
@@ -160,6 +165,7 @@ session_start();
                         EXTRACT(YEAR FROM data) = EXTRACT(YEAR FROM CURRENT_TIMESTAMP)";
         $ris = mysqli_query($connessione, $query);
         ?>
+
         <div class="row">
             <div class="col-8">
                 <table class="table table-hover">

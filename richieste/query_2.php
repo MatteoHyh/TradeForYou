@@ -133,6 +133,7 @@ session_start();
                     HAVING COUNT(idOperazione) > 5";
         $ris = mysqli_query($connessione, $query);
         ?>
+
         <div class="row">
             <div class="col-8">
                 <table class="table table-hover">
