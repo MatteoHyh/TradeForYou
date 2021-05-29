@@ -9,6 +9,10 @@
     Ultima modifica: 29/05/2021
 -->
 
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 
 <html lang="it">
@@ -58,13 +62,15 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
 
+                <?php if (!isset($_SESSION["id"]) || !isset($_SESSION["ruolo"])) {?>
                 <li class='nav-item'>
                     <a class='nav-link' href='login.php'>Login</a>
                 </li>
-
+                <?php } else {?>
                 <li class='nav-item'>
                     <a class='nav-link' href='logout.php'>Logout</a>
                 </li>
+                <?php } ?>
             </ul>
         </div>
     </div>
@@ -83,6 +89,16 @@
 
 
         <div class="row"><h1 style="margin-top: 20px">Homepage</h1></div>
+
+        <?php
+        if (isset($_SESSION["id"]) && isset($_SESSION["ruolo"])) {
+            echo '<div class="row">';
+            echo '<div class="col-6">';
+            echo '<p>Benvenuto ' . $_SESSION["nome"] . ' ' . $_SESSION["cognome"] . '</p>';
+            echo '</div>';
+            echo '</div>';
+        }
+        ?>
 
         <div class="row">
             <div class="col-6">

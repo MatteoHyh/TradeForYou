@@ -115,7 +115,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["ruolo"])) {
 
                     <div class="row">
                         <div class="col-8">
-                            <input type="submit" class="btn btn-primary" value="Accedi">
+                            <input type="submit" name="submit" class="btn btn-primary" value="Accedi">
                         </div>
                     </div>
                 </form>
@@ -124,7 +124,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["ruolo"])) {
             <div class="col-6">
                 <h1 style="margin-top: 20px">Operatore</h1>
                 <!-- Form di login operatori -->
-                <form method="post" action="">
+                <form method="post" action="elabora_login.php">
                     <!-- Input hidden che specifica chi si sta loggando (cliente oppure operatore) -->
                     <input type="hidden" name="tipologin" value="operatore">
 
