@@ -9,10 +9,6 @@
     Ultima modifica: 29/05/2021
 -->
 
-<?php
-
-?>
-
 <!DOCTYPE html>
 
 <html lang="it">

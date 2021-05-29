@@ -60,9 +60,9 @@ if ($dato = $risultato->fetch_assoc()) {
     // Esito positivo: porto l'utente alla homepage
     header("Location: index.php");
     exit();
+} else {
+    // Esito negativo: riporto l'utente al form di login
+    header("Location: login.php");
+    exit();
 }
-// Esito negativo: riporto l'utente al form di login
-header("Location: login.php");
-exit();
-
 ?>

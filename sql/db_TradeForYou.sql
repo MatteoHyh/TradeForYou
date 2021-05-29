@@ -1,3 +1,14 @@
+/*
+             Cognome: Hu
+               Nome: Matteo Yanhui
+          Matricola: 11519
+             Classe: 5^BIN
+    Anno scolastico: 2020/2021
+
+          Nome file: db_TradeForYou.sql
+    Ultima modifica: 29/05/2021
+ */
+
 CREATE DATABASE IF NOT EXISTS db_TradeForYou;
 
 
