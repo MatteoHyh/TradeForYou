@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS db_TradeForYou;
 
-USE
-db_TradeForYou;
+
+USE db_TradeForYou;
 
 
 DROP TABLE IF EXISTS operatori;
@@ -44,8 +44,8 @@ CREATE TABLE operazioni
     descrizione    VARCHAR(50)   NOT NULL,
     fk_idOperatore INT           NOT NULL,
     fk_idCliente   INT           NOT NULL,
-    FOREIGN KEY (fk_idOperatore) REFERENCES operatori (idOperatore) ON UPDATE CASCADE ON DELETE RESTRICT,
-    FOREIGN KEY (fk_idCliente) REFERENCES clienti (idCliente) ON UPDATE CASCADE ON DELETE RESTRICT,
+    FOREIGN KEY (fk_idOperatore) REFERENCES operatori (idOperatore),
+    FOREIGN KEY (fk_idCliente) REFERENCES clienti (idCliente),
     CHECK (importo > 0)
 );
 
@@ -68,14 +68,13 @@ CREATE TABLE invia
     idInvia       INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     fk_idCampagna INT NOT NULL,
     fk_idCliente  INT NOT NULL,
-    FOREIGN KEY (fk_idCampagna) REFERENCES campagne (idCampagna) ON UPDATE CASCADE ON DELETE RESTRICT,
-    FOREIGN KEY (fk_idCliente) REFERENCES clienti (idCliente) ON UPDATE CASCADE ON DELETE RESTRICT
+    FOREIGN KEY (fk_idCampagna) REFERENCES campagne (idCampagna),
+    FOREIGN KEY (fk_idCliente) REFERENCES clienti (idCliente)
 );
 
 
 DROP PROCEDURE IF EXISTS newOperatore;
-DELIMITER
-//
+DELIMITER //
 CREATE PROCEDURE newOperatore(param_username VARCHAR (20),
                               param_cognome VARCHAR (50),
                               param_nome VARCHAR (50),
@@ -84,18 +83,16 @@ CREATE PROCEDURE newOperatore(param_username VARCHAR (20),
                               param_password VARCHAR (20))
     DETERMINISTIC
 BEGIN
- SET @s = MD5(RAND());
- SET @h = SHA2(CONCAT(@s, param_password), 256);
-INSERT INTO operatori(username, cognome, nome, dataNascita, email, salt, password_hash)
-VALUES (param_username, param_cognome, param_nome, param_dataNascita, param_email, @s, @h);
-END
-//
+    SET @s = MD5(RAND());
+    SET @h = SHA2(CONCAT(@s, param_password), 256);
+    INSERT INTO operatori(username, cognome, nome, dataNascita, email, salt, password_hash)
+    VALUES (param_username, param_cognome, param_nome, param_dataNascita, param_email, @s, @h);
+END //
 DELIMITER ;
 
 
 DROP PROCEDURE IF EXISTS newCliente;
-DELIMITER
-//
+DELIMITER //
 CREATE PROCEDURE newCliente(param_username VARCHAR (20),
                             param_cognome VARCHAR (50),
                             param_nome VARCHAR (50),
@@ -104,18 +101,16 @@ CREATE PROCEDURE newCliente(param_username VARCHAR (20),
                             param_password VARCHAR (20))
     DETERMINISTIC
 BEGIN
- SET @s = MD5(RAND());
- SET @h = SHA2(CONCAT(@s, param_password), 256);
-INSERT INTO clienti(username, cognome, nome, dataNascita, email, salt, password_hash)
-VALUES (param_username, param_cognome, param_nome, param_dataNascita, param_email, @s, @h);
-END
-//
+    SET @s = MD5(RAND());
+    SET @h = SHA2(CONCAT(@s, param_password), 256);
+    INSERT INTO clienti(username, cognome, nome, dataNascita, email, salt, password_hash)
+    VALUES (param_username, param_cognome, param_nome, param_dataNascita, param_email, @s, @h);
+END //
 DELIMITER ;
 
 
 DROP PROCEDURE IF EXISTS newOperazione;
-DELIMITER
-//
+DELIMITER //
 CREATE PROCEDURE newOperazione(param_data DATE,
                                param_ora TIME,
                                param_importo DECIMAL (7,2),
@@ -124,40 +119,35 @@ CREATE PROCEDURE newOperazione(param_data DATE,
                                param_fk_idCliente INT)
     DETERMINISTIC
 BEGIN
-INSERT INTO operazioni(data, ora, importo, descrizione, fk_idOperatore, fk_idCliente)
-VALUES (param_data, param_ora, param_importo, param_descrizione, param_fk_idOperatore, param_fk_idCliente);
-END
-//
+    INSERT INTO operazioni(data, ora, importo, descrizione, fk_idOperatore, fk_idCliente)
+    VALUES (param_data, param_ora, param_importo, param_descrizione, param_fk_idOperatore, param_fk_idCliente);
+END //
 DELIMITER ;
 
 
 DROP PROCEDURE IF EXISTS newCampagna;
-DELIMITER
-//
+DELIMITER //
 CREATE PROCEDURE newCampagna(param_nome VARCHAR (50),
                              param_descrizione VARCHAR (50),
                              param_dataScadenza DATE,
                              param_budget DECIMAL (7, 2))
     DETERMINISTIC
 BEGIN
-INSERT INTO campagne(nome, descrizione, dataScadenza, budget)
-VALUES (param_nome, param_descrizione, param_dataScadenza, param_budget);
-END
-//
+    INSERT INTO campagne(nome, descrizione, dataScadenza, budget)
+    VALUES (param_nome, param_descrizione, param_dataScadenza, param_budget);
+END //
 DELIMITER ;
 
 
 DROP PROCEDURE IF EXISTS newInvia;
-DELIMITER
-//
+DELIMITER //
 CREATE PROCEDURE newInvia(param_fk_idCampagna INT,
                           param_fk_idCliente INT)
     DETERMINISTIC
 BEGIN
-INSERT INTO invia(fk_idCampagna, fk_idCliente)
-VALUES (param_fk_idCampagna, param_fk_idCliente);
-END
-//
+    INSERT INTO invia(fk_idCampagna, fk_idCliente)
+    VALUES (param_fk_idCampagna, param_fk_idCliente);
+END //
 DELIMITER ;
 
 
