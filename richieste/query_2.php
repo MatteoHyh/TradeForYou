@@ -11,11 +11,6 @@
 
 <?php
 session_start();
-
-$db_host = "ciao lol";
-$db_username = "ciao lol";
-$db_password = "ciao lol";
-$db_name = "ciao lol";
 ?>
 
 <!DOCTYPE html>

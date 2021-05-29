@@ -15,8 +15,9 @@ $db_name = "ciao lol";
  *  Ultima modifica: 29/05/2021
  */
 
-// Controllo se è stato utilizzato il form di accesso (login.php)
-if (!isset($_POST["submit"]) || !isset($_POST["nome"]) || !isset($_POST["descrizione"]) || !isset($_POST["datascadenza"]) || !isset($_POST["budget"])) {
+// Controllo se è stato utilizzato il form (form.php)
+if (!isset($_POST["submit"]) || !isset($_POST["nome"]) || !isset($_POST["descrizione"]) ||
+    !isset($_POST["datascadenza"]) || !isset($_POST["budget"])) {
     header("location: form.php");
     exit();
 }
