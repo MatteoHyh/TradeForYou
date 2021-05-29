@@ -62,6 +62,10 @@ session_start();
                     <a class="nav-link" href="../index.php">Home</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="../tabelle.php">Tabelle</a>
+                </li>
+
                 <?php if (!isset($_SESSION["id"]) || !isset($_SESSION["ruolo"])) {?>
                     <li class='nav-item'>
                         <a class='nav-link' href='../login.php'>Login</a>

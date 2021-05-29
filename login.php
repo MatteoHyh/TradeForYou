@@ -67,6 +67,10 @@ if (isset($_SESSION["id"]) && isset($_SESSION["ruolo"])) {
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="tabelle.php">Tabelle</a>
+                </li>
+
                 <li class='nav-item'>
                     <a class='nav-link active' aria-current="page" href='#'>Login</a>
                 </li>
