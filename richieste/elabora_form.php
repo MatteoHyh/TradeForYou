@@ -1,4 +1,9 @@
 <?php
+$db_host = "ciao lol";
+$db_username = "ciao lol";
+$db_password = "ciao lol";
+$db_name = "ciao lol";
+
 /*
  *          Cognome: Hu
  *             Nome: Matteo Yanhui
