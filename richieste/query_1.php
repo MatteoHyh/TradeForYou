@@ -151,6 +151,7 @@
                 <table class="table table-hover">
                     <thead>
                     <tr>
+                        <th scope="col">ID</th>
                         <th scope="col">Data</th>
                         <th scope="col">Importo</th>
                     </tr>
@@ -161,6 +162,7 @@
                     // Stampa degli elementi della query in una tabella
                     while ($row = $ris->fetch_assoc()) {
                         echo "<tr>";
+                        echo "<th scope='row'>" . $input_idCliente . "</th>";
                         echo "<td>" . $row["data"] . "</td>";
                         echo "<td>" . $row["importo"] . "</td>";
                         echo "</tr>";
