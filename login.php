@@ -70,10 +70,6 @@ if (isset($_SESSION["id"]) && isset($_SESSION["ruolo"])) {
                 <li class='nav-item'>
                     <a class='nav-link active' aria-current="page" href='#'>Login</a>
                 </li>
-
-                <li class='nav-item'>
-                    <a class='nav-link' href='logout.php'>Logout</a>
-                </li>
             </ul>
         </div>
     </div>
@@ -144,7 +140,7 @@ if (isset($_SESSION["id"]) && isset($_SESSION["ruolo"])) {
 
                     <div class="row">
                         <div class="col-8">
-                            <input type="submit" class="btn btn-primary" value="Accedi">
+                            <input type="submit" name="submit" class="btn btn-primary" value="Accedi">
                         </div>
                     </div>
                 </form>

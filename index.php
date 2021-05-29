@@ -94,7 +94,8 @@ session_start();
         if (isset($_SESSION["id"]) && isset($_SESSION["ruolo"])) {
             echo '<div class="row">';
             echo '<div class="col-6">';
-            echo '<p>Benvenuto ' . $_SESSION["nome"] . ' ' . $_SESSION["cognome"] . '</p>';
+            echo '<p>Benvenuto <b>' . $_SESSION["nome"] . ' ' . $_SESSION["cognome"] . '</b></p>';
+            echo '<p>Ruolo: <b>' . $_SESSION["ruolo"] . '</b></p>';
             echo '</div>';
             echo '</div>';
         }

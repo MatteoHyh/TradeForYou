@@ -55,8 +55,8 @@ if ($connessione === false)
 $query = "SELECT * FROM " . $target . " WHERE username = '" . $username . "' AND SHA2(CONCAT(salt, '" . $password . "'), 256) = password_hash";
 $risultato = mysqli_query($connessione, $query);
 if ($dato = $risultato->fetch_assoc()) {
-    $_SESSION["id"] = $dato["idCliente"];
-    $_SESSION["ruolo"] = $_POST["tipologin"];
+    $_SESSION["id"] = $dato[$id];
+    $_SESSION["ruolo"] = ($_POST["tipologin"]);
     $_SESSION["cognome"] = $dato["cognome"];
     $_SESSION["nome"] = $dato["nome"];
     // Esito positivo: porto l'utente alla homepage
