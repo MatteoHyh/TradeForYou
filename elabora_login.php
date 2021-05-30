@@ -27,14 +27,14 @@ if (!isset($_POST["submit"]) || !isset($_POST["tipologin"])) {
 switch ($_POST["tipologin"]) {
     case 'cliente':
         $target = "clienti";
-        $username = $_POST["userlogin"];
-        $password = $_POST["userpassword"];
+        $username = htmlspecialchars($_POST["userlogin"]);
+        $password = htmlspecialchars($_POST["userpassword"]);
         $id = "idCliente";
         break;
     case 'operatore':
         $target = "operatori";
-        $username = $_POST["oplogin"];
-        $password = $_POST["oppassword"];
+        $username = htmlspecialchars($_POST["oplogin"]);
+        $password = htmlspecialchars($_POST["oppassword"]);
         $id = "idOperatore";
         break;
     default:
@@ -52,13 +52,15 @@ if ($connessione === false)
     die("Connection failed: " . $connessione->connect_error);
 
 // Controllo i dati inseriti dall'utente
-$query = "SELECT * FROM " . $target . " WHERE username = '" . $username . "' AND SHA2(CONCAT(salt, '" . $password . "'), 256) = password_hash";
-$risultato = mysqli_query($connessione, $query);
+$query = $connessione->prepare("SELECT * FROM ? WHERE username = ? AND SHA2(CONCAT(salt, ?), 256) = password_hash");
+$query->bind_param("sss", $target, $username, $password);
+$query->execute();
+$risultato = $query->get_result();
 if ($dato = $risultato->fetch_assoc()) {
     $_SESSION["id"] = $dato[$id];
-    $_SESSION["ruolo"] = ($_POST["tipologin"]);
-    $_SESSION["cognome"] = $dato["cognome"];
-    $_SESSION["nome"] = $dato["nome"];
+    $_SESSION["ruolo"] = htmlspecialchars($_POST["tipologin"]);
+    $_SESSION["cognome"] = htmlspecialchars($dato["cognome"]);
+    $_SESSION["nome"] = htmlspecialchars($dato["nome"]);
     // Esito positivo: porto l'utente alla homepage
     header("Location: index.php");
     exit();

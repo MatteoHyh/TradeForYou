@@ -17,10 +17,10 @@ if (!isset($_POST["submit"]) || !isset($_POST["nome"]) || !isset($_POST["descriz
     exit();
 }
 
-$nome = $_POST["nome"];
-$descrizione = $_POST["descrizione"];
-$datascadenza = $_POST["datascadenza"];
-$budget = $_POST["budget"];
+$nome = htmlspecialchars($_POST["nome"]);
+$descrizione = htmlspecialchars($_POST["descrizione"]);
+$datascadenza = htmlspecialchars($_POST["datascadenza"]);
+$budget = htmlspecialchars($_POST["budget"]);
 
 // Includo i dati di configurazione del database
 include '../config/config.php';

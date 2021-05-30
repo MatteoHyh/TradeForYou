@@ -143,7 +143,7 @@ session_start();
         <?php
         // Controllo che sia stato effettivamente inserito e inviato un codice numerico del cliente
         if (isset($_POST["submit"]) && isset($_POST["idCliente"]) && is_numeric($_POST["idCliente"])) {
-        $input_idCliente = $_POST["idCliente"];
+        $input_idCliente = htmlspecialchars($_POST["idCliente"]);
 
         // Includo i dati di configurazione del database
         include '../config/config.php';
@@ -153,12 +153,14 @@ session_start();
         if ($connessione === false)
             die("Connection failed: " . $connessione->connect_error);
 
-        $query = "SELECT data, importo
+        $query = $connessione->prepare("SELECT data, importo
                         FROM operazioni
-                        WHERE fk_idCliente = $input_idCliente AND
+                        WHERE fk_idCliente = ? AND
                         EXTRACT(MONTH FROM data) = EXTRACT(MONTH FROM CURRENT_TIMESTAMP) AND
-                        EXTRACT(YEAR FROM data) = EXTRACT(YEAR FROM CURRENT_TIMESTAMP)";
-        $ris = mysqli_query($connessione, $query);
+                        EXTRACT(YEAR FROM data) = EXTRACT(YEAR FROM CURRENT_TIMESTAMP)");
+        $query->bind_param("s", $input_idCliente);
+        $query->execute();
+        $ris = $query->get_result();
         ?>
 
         <div class="row">
